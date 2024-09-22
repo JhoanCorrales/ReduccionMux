@@ -5,7 +5,6 @@ import Main
 def calcular():
     entrada_texto = entrada.get()
     resultado = Main.calcular_min_terminos(entrada_texto)  # Llama a la función en Main.py
-    print("Hola perdomo")
     
     if "Error" in resultado:
         messagebox.showerror("Error", resultado)  # Muestra un mensaje de error si ocurre algún problema
