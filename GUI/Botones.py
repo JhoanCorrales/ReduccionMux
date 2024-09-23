@@ -1,25 +1,30 @@
 import tkinter as tk
+from tkinter import messagebox
 import sys
 import os
-from tkinter import messagebox
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import Main
 
-def calcular(entrada, resultado_label):
-    entrada_texto = entrada.get()
-    resultado = Main.calcular_min_terminos(entrada_texto)
+def calcular(entrada_min_terminos, label_resultado, campo_entrada, boton_calcular, label_entrada_texto):
+    texto_entrada = entrada_min_terminos.get()
+    resultado = Main.calcular_min_terminos(texto_entrada)
     
+    # Eliminar los widgets de entrada, el botón y la etiqueta de entrada
+    campo_entrada.destroy()
+    boton_calcular.destroy()
+    label_entrada_texto.destroy()
+    label_resultado.place(relx=0.5, y=150, anchor='center')
+
     if "Error" in resultado:
         messagebox.showerror("Error", resultado)
     else:
-        resultado_label.config(text=resultado)
+        label_resultado.config(text=f"Resultado: {resultado}")
 
-def configurar_botones(ventana, entrada):
-    # Etiqueta para mostrar el resultado
-    resultado_label = tk.Label(ventana, text="", justify="left")
-    resultado_label.place(x=20, y=100)
+
+def configurar_botones(ventana, entrada_min_terminos, label_entrada_texto):
+    label_resultado = tk.Label(ventana, text=":D", font=("Arial", 12), bg="white")
+    label_resultado.place(relx=0.5, y=300, anchor='center')
     
-    # Botón para calcular
-    boton = tk.Button(ventana, text="Calcular", command=lambda: calcular(entrada, resultado_label))
-    boton.place(x=480, y=17)
+    boton_calcular = tk.Button(ventana, text="Calcular", command=lambda: calcular(entrada_min_terminos, label_resultado, entrada_min_terminos, boton_calcular, label_entrada_texto))
+    boton_calcular.place(relx=0.5, y=240, anchor='center')
