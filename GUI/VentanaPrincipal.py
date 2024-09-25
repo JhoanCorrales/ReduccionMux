@@ -9,7 +9,7 @@ ventana_principal.resizable(0,0)
 ventana_principal.title("Reducción de multiplexor (MUX)")
 ventana_principal.iconbitmap("C:\\Users\\corra\\OneDrive\\Documentos\\Visual Studio\\Python\\ReduccionMux\\ReduccionMux\\GUI\\Image\\ventana_icono.ico")
 
-imagen = Image.open("C:\\Users\\corra\\OneDrive\\Documentos\\Visual Studio\\Python\\ReduccionMux\\ReduccionMux\\GUI\\Image\\FondoVentana.jpg")
+imagen = Image.open("C:\\Users\\corra\\OneDrive\\Documentos\\Visual Studio\\Python\\ReduccionMux\\ReduccionMux\\GUI\\Image\\FondoMux.jpg")
 imagen = imagen.resize((1350, 730), Image.LANCZOS)
 
 # Convierte la imagen en formato RGBA para la manipulacion de la transparencia

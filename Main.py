@@ -26,7 +26,7 @@ def reduccion(min_terminos, variables):
         if negada in min_terminos and no_negada in min_terminos:
             resultado.append("1")
         elif negada in min_terminos:
-            resultado.append("~A")
+            resultado.append("\u0100")
         elif no_negada in min_terminos:
             resultado.append("A")
         else:
