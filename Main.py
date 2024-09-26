@@ -1,6 +1,7 @@
 def calcular_min_terminos(entrada):
     try:
         min_terminos = list(map(int, entrada.split(',')))
+        min_terminos = list(set(min_terminos))
         min_terminos.sort()
         maximo_termino = max(min_terminos)
         num_variables = maximo_termino.bit_length()
