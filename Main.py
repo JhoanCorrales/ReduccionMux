@@ -7,7 +7,7 @@ def calcular_min_terminos(entrada):
 
         if num_variables > 1:
             mux_info, resultado = reduccion(min_terminos, num_variables)
-            return f"Número de variables: {num_variables}\n{mux_info}\n\t {resultado}"
+            return f"Número de variables: {num_variables}\n{mux_info}\n\t {resultado}", resultado
         else:
             return "Error: No se puede reducir un mux 2x1"
     except ValueError:
