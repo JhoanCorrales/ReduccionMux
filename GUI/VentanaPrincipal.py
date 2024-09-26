@@ -26,10 +26,11 @@ fondo_label = tk.Label(ventana_principal, image=fondo_img)
 fondo_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Campo de entrada
-entrada_label = tk.Label(ventana_principal, text="Por favor ingrese los indices de los min terminos:", font=("Arial", 20), bg='white')
+entrada_label = tk.Label(ventana_principal, text="Por favor ingrese los indices de los min terminos:", font=("Arial", 20), bg='black', fg="white")
 entrada_label.place(relx=0.5, y=150, anchor='center')
 
 entrada_input = tk.Entry(ventana_principal)
+entrada_input.config(bg="black", fg="white")
 entrada_input.place(relx=0.5, y=190, anchor='center', width=300)
 
 configurar_botones(ventana_principal, entrada_input, entrada_label)
