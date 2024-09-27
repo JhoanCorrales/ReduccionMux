@@ -4,13 +4,15 @@ def dibujar_multiplexor(canvas, num_entradas, terminos_entradas, num_control):
 
     letras_control = ["B", "C", "D", "E", "F", "G", "H"]
     
+    canvas.create_line(200, 30, 200, 200, fill="white", width=2)
+    canvas.create_line(200, 30, 300, 30, fill="white", width=2)
+    canvas.create_text(210, 10, text="Lineas de control (Sn-2)", anchor='w', fill="white")
     for i in range(num_control):
-        y_pos = 50 + i * 30  # Espaciado entre líneas de control
-        canvas.create_line(200, y_pos, 200, y_pos + 30, fill="white", width=2)  # Dibujar la línea de control
+        y_pos = 30 + i * 30  # Espaciado entre líneas de control
         if i < len(letras_control):
-            canvas.create_text(210, y_pos, text=f"{letras_control[i]}", anchor='w', fill="red")  # Etiquetas con letras
+            canvas.create_text(310, y_pos, text=f"{letras_control[i]}", anchor='w', fill="red")  # Etiquetas con letras
         else:
-            canvas.create_text(210, y_pos, text=f"S{i}", anchor='w', fill="white")  # Fallback a etiquetas S
+            canvas.create_text(310, y_pos, text=f"S{i}", anchor='w', fill="white")  # Fallback a etiquetas S
 
 
     puntos_trapecio = [100, 100, 100, 100 + altura_multiplexor, 250, 100 + altura_multiplexor - 60, 250, 160]
