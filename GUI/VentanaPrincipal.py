@@ -1,16 +1,22 @@
+import os
 import tkinter as tk
 from PIL import Image, ImageTk
 from Botones import configurar_botones
+
+DIRECTORIO_ACTUAL = os.path.dirname(os.path.abspath(__file__))
+
+ruta_icono = os.path.join(DIRECTORIO_ACTUAL, "Image", "ventana_icono.ico")
+ruta_fondo = os.path.join(DIRECTORIO_ACTUAL, "Image", "FondoMux.jpg")
 
 # Crear la ventana principal de Tkinter
 ventana_principal = tk.Tk()
 ventana_principal.geometry("1350x730")
 ventana_principal.resizable(0,0)
 ventana_principal.title("Reducción de multiplexor (MUX)")
-ventana_principal.iconbitmap("C:\\Users\\corra\\OneDrive\\Documentos\\Visual Studio\\Python\\ReduccionMux\\ReduccionMux\\GUI\\Image\\ventana_icono.ico")
+ventana_principal.iconbitmap(ruta_icono)
 
 
-imagen = Image.open("C:\\Users\\corra\\OneDrive\\Documentos\\Visual Studio\\Python\\ReduccionMux\\ReduccionMux\\GUI\\Image\\FondoMux.jpg")
+imagen = Image.open(ruta_fondo)
 imagen = imagen.resize((1350, 730), Image.LANCZOS)
 
 # Convierte la imagen en formato RGBA para la manipulacion de la transparencia
